@@ -1,0 +1,623 @@
+
+
+
+
+
+#preloader {
+  background: #000 url(../img/preload.gif) no-repeat center;
+  background-size: 8%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  transition: opacity 1s ease-out;
+ 
+
+}
+
+@media screen and (max-width: 768px){
+  #preloader{
+    transform: scale(3);
+  }
+}
+
+
+
+/* MEIN CODE*/
+
+*{
+  user-select: none;
+  font-family: myFont;
+  font-weight: 700;
+}
+@font-face{
+  font-family: myFont;
+  src: url(../orbitron.ttf);
+}
+*{
+  box-sizing: border-box;
+  
+}
+html{
+  position: relative;
+  min-width: 100%;
+}
+
+
+
+
+
+
+body {
+  background: #000000 url(../img/bahn3-5.png) no-repeat;
+  background-size: 80% auto;
+  background-position-y: -10%;
+  overflow: auto;
+  margin: 0;
+  color: #fff;
+ 
+ 
+}
+
+/* Hintergrundbilder sollten in einer Zeile definiert werden, und die Werte für background-size und background-position sollten in derselben Zeile stehen. */
+
+body {
+  /* Schriftarten sollten einzeln deklariert werden, nicht überschrieben. Hier deklarieren Sie 'Orbitron', aber dann überschreiben Sie es mit anderen Schriftarten. Sie sollten die Schriftarten getrennt definieren. */
+  font-family: 'Orbitron', 'Bebas Neue', 'PT Sans Narrow', 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Font-Face-Regeln sollten außerhalb der Body-Definition stehen. */
+/* orbitron-400-latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/orbitron-v31-latin-regular.woff2') format('woff2');
+}
+
+/* orbitron-500 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/orbitron-v31-latin-500.woff2') format('woff2');
+}
+
+/* Fügen Sie ähnliche Font-Face-Regeln für die anderen Gewichtungen hinzu. */
+
+/* orbitron-600 - latin */
+/* orbitron-700 - latin */
+/* orbitron-800 - latin */
+/* orbitron-900 - latin */
+
+
+/* orbitron-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/orbitron-v31-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* orbitron-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/orbitron-v31-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* orbitron-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/orbitron-v31-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* orbitron-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/orbitron-v31-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* orbitron-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/orbitron-v31-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+
+
+
+  
+
+
+body.loaded, html {
+  opacity: 1;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  body{
+
+
+background-size:contain;
+background-repeat: no-repeat;
+background-position-y: 60%;
+  }
+
+}
+
+/*--------------------------------#HOLDER--------------------------------------*/
+
+#holder{
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  margin: 0 auto;
+  transition: all 1s ease-in-out;
+  position: relative;
+
+
+
+}
+@media screen and (max-width: 768px) {
+  #holder{
+
+    max-width: 100%;
+   margin: 0 auto;
+  }
+}
+
+
+
+
+/*-------------------------------HEADER---------------------------------------*/
+
+header{
+
+  width: 100%;
+  order: 1;
+  z-index: 8;
+  transition: all 1s ease-in-out;
+}
+header img{
+  position: relative;
+  z-index: 1000;
+width: 6vw;
+margin:2rem 0 4rem -5rem;
+min-width: 4rem;
+transition: transform 0.2s ease-in-out;
+transform: scale(0.7);
+  
+  
+
+}
+
+header img:hover{
+  transform: scale(0.8);
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+header img{
+  margin:2rem 0 2rem 2rem;
+  transition: all 1s ease-in-out;
+  transform: scale(1.07);
+  opacity: 1;
+}
+
+
+
+}
+
+
+
+
+/*---------------------------------NAVIGATION-------------------------------------*/
+
+
+nav{
+  order: 3;
+
+ font-family: 'Orbitron', sans-serif;
+ font-size: calc(2vw + 1.5vh);
+ text-transform: uppercase;
+ margin: 0;
+ 
+
+
+
+}
+
+ul{
+  text-decoration: none;
+ list-style: none;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-top: 3rem;
+ margin-right: 4rem;
+
+
+}
+
+
+
+
+li{
+  width: 100%;
+  text-align: center;
+
+
+}
+
+.bild{
+  position: relative;
+  border-radius: 1.5rem;
+  top: 2.2rem;
+
+
+}
+
+.bild img{
+  width: 100%;
+  height: 6rem;
+  object-fit: cover;
+  margin: 0;
+  opacity: 0;
+  margin-bottom: 8px;
+  transition: all 0.5s ease-in-out;
+
+  /*box-shadow: 0 0 15px 6px #78ced1;
+  border-radius: 1.5rem;*/
+
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Orbitron', sans-serif;
+  rotate: -6deg;
+  background: rgba(102, 31, 23, 0.6);
+  border-radius: 1rem;
+  margin-top: -1rem;
+  padding: 0.4rem;
+  filter: blur(2px);
+  transition: all 0.3s ease-in-out;
+  background: rgba(28, 74, 96, 0.5);
+
+}
+
+.text:hover{
+  rotate: 0deg;
+  margin-top: -0.2rem;
+  scale: 1.1;
+  margin-left: 1rem;
+  background: rgba(102, 31, 23, 0);
+  filter: blur(0px);
+  text-shadow: #000 2px 7px 8px;
+
+}
+.bild img{
+  opacity: 0;
+}
+
+ .bild:hover img{
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .text{
+    background: rgba(28, 74, 96, 0.5);
+    
+
+    
+  }
+  .bild:hover img{
+    opacity: 0;
+  }
+  
+ 
+
+  
+
+  .text:hover {
+    rotate:0deg;
+    scale: 1;
+    margin-top: -8rem;
+    margin-left: 0rem;
+  }
+
+  ul{
+    margin-left: 4rem;
+  }
+
+ 
+
+}
+
+
+
+
+
+/*LINKS--------*/
+
+a:link{
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+a:visited{
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+a:hover{
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+a:active{
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+
+body, html{
+  overflow-x: hidden;
+}
+  
+nav ul{
+  margin-right: 0rem;
+  margin-top: 4rem;
+}
+
+
+  ul {
+    display: block;
+    margin-top: 4rem;
+
+
+
+  }
+
+  li {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;  /* Ajustado para centrar el bloque */
+    text-align: center;  /* Centrar contenido */
+    margin-bottom: -4rem;
+
+  }
+
+
+
+  .bild img {
+    width: 100%;
+    height: 25vh;
+    object-fit: cover;
+    margin: 0 auto;  /* Ajustado para centrar la imagen */
+    margin-bottom: -6px;
+
+
+  }
+
+  .text{
+    margin-top:-8rem;
+    filter: blur(0px);
+  }
+  nav{
+    font-size: calc(2vw + 3vh);
+    transform: rotate(0deg);
+    margin-top: 2.8rem;
+    margin-left: -5.5rem;
+  }
+}
+
+
+@media screen and (max-width: 810px) {
+  .text{
+
+    filter: blur(0px);
+  }
+}
+
+
+
+
+/*----------------------------------MAIN------------------------------------*/
+
+main {
+  order: 2;
+  width: 98%;
+  margin: 0 auto;
+  height: 30vh; /* Puedes ajustar la altura según tus necesidades */
+  position: relative; /* Agregado para el posicionamiento absoluto de los elementos hijos */
+  transition: all 0.5s ease-in-out;
+  
+}
+
+main:hover{
+  margin-top: -4.5rem;
+  height: 40vh;
+}
+
+main video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Cubre todo el contenedor */
+  border-radius: 1.5rem;
+  filter: blur(3px) grayscale(0.8);
+  opacity: 0.7;
+  transition: all 1s ease-in-out; /* Agregado para la transición de opacidad */
+  box-shadow: 0 0 15px 6px #78ced1;
+
+}
+
+
+/* Nuevos estilos */
+.video-container {
+  position: relative;
+  height: 100%;
+}
+
+.video-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 1;/* Asegurarse de que el texto aparezca encima del video */
+  font-family: myFont, sans-serif;
+  font-size: calc(17.5vw + 3.5vh); /* ejemplo de tamaño relativo */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6; /* Opacidad inicial */
+  transition: opacity 2s ease-in-out; /* Transición de 2 segundos */
+  filter: blur(2px);
+
+}
+
+
+
+
+
+
+
+.video-container:hover .video-text {
+  opacity: 0; /* Oculta el texto cuando se hace hover */
+
+
+
+}
+
+.video-container:hover video {
+  opacity: 1; /* Cambia la opacidad del video a 100% cuando se hace hover */
+  filter: blur(0px) grayscale(0);
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+ main{
+  width: 120%;
+  height: 50vh;
+  margin-top: -10rem;
+  
+ }
+
+ main:hover{
+  transform: scale(1.2);
+  margin-top: -7rem;
+ }
+
+
+  main video{
+  filter: blur(0) grayscale(0);
+  box-shadow: 0 0 0px 0px #78ced1;
+  margin-left: 0;
+  border-radius: 0;
+  
+
+ }
+
+
+
+ul{
+  margin-top: -2rem;
+
+}
+
+.video-text{
+  opacity: 0;
+}
+}
+
+
+/*----------------------------------section MYWORK------------------------------------*/
+
+
+
+/*----------------------------------FOOTER------------------------------------*/
+
+/*----------------------------------FOOTER------------------------------------*/
+
+
+.rechte{
+
+
+  
+  order: 4;
+  width: 100%;
+  margin: 0 auto;
+  
+  text-align: center;
+  bottom: -8rem;
+  position: absolute;
+  font-size: 0.8rem;
+
+
+
+
+}
+
+
+div a{
+  scale: 0.8;
+  margin: 20px 20px 2px 20px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+ div a{
+  scale:0.7;
+  margin: 2px 10px 2px 10px;
+
+
+
+ }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

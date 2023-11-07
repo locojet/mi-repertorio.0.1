@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Find Juan</title>
+  <link rel="icon" href="favicon.ico">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Willkommen auf meinem Webentwickler-Portfolio. Hier finden Sie meine Arbeit, Projekte und Fähigkeiten.">
+  <meta property="og:title" content="Webentwickler Portfolio - Juan Mejia">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <link rel="manifest" href="site.webmanifest">
+  <!-- Place favicon.ico in the root directory -->
+  <link rel="stylesheet" href="contact.css">
+  
+
+
+  <meta name="theme-color" content="#1c4a60">
+<body>
+
+ <!---------------------------------preloader-------------------------------->
+ <div id="preloader"></div>
+
+
+
+    <div id="bg-globo">
+
+    <section>
+        <div id="ripple">
+          <!--------------------------header--------------------------------->
+          <header>
+           <a href="index.html"><img src="img/logojuan.svg" alt=""></a>
+
+          <!--------------------------nav--------------------------------->
+          <!--hamburger icon-->
+
+
+
+            <div class="navkorb">
+            <div class="navbar">
+              <div class="boton"></div>
+              <div class="bar eins"><a class="bartext" href="aboutme.html">ABOUTME</a></div>
+              <div class="bar zwei"><a class="bartext" href="mywork.html">MYWORK</a></div>
+              <div class="bar drei"><a class="bartext" href="contact.html">CONTACT</a></div>
+              <div class="boton1"></div>
+            </div>
+          </div>
+
+        </header>
+
+
+
+        <!----------------------------main-------------------------------->
+        <main>
+          <div class="contact"><img src="img/contacttext.png" alt=""></div>
+
+          <div class="contenedor animiert">
+            <div class="columna">
+           
+          </div>
+
+        </div>
+        <div
+class="holder center-content">
+  <form action="mailto:juank2219@hotmail.com" method="get" enctype="text/plain" class="formulario">
+
+    <P>
+     <input type="submit" value="Mail me">
+
+    </P>
+   </form><br><br><br>
+
+
+
+   
+</div>
+</main>
+
+</div>
+      </main>
+        <!----------------------------footer-------------------------------->
+      <footer id="footer">
+        <div class="icon-container">
+
+          <a href="https://instagram.com/locojet?igshid=YTQwZjQ0NmI0OA%3D%3D&utm_source=qr" target="_blank"><img src="img/Instagramicon.png" alt=""></a>
+          <a href="https://youtube.com/@LocoJet?si=K4qnVxl7B0AbV9D9" target="_blank"><img src="img/youtubeicon.png" alt=""></a>
+          <a href="https://github.com/locojet"><img src="img/githubicon.png" alt=""></a>
+
+        </div>
+      </footer>
+        </div>
+    </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.ripples@0.6.3/dist/jquery.ripples-min.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+   //-----------------------------------RIPPLES---------------------------------------------
+
+
+   $('#ripple') .ripples({
+    resolution: 802,
+    dropRadius: 100,
+    perturbance:0.02,
+})
+</script>
+
+ <script>
+
+      //-----------------------------------OPACITY website---------------------------------------------
+$(document).ready(function() {
+    $('body, html').css('opacity', '1');
+});
+
+    </script>
+    <script>
+      //-- -----------------------------------hamburger menü----------------------------------------------->
+      document.querySelector('.navkorb').addEventListener('click', function() {
+    // Wechseln zwischen Hinzufügen/Entfernen der 'active'-Klasse
+    this.classList.toggle('active');
+
+    // Für jedes 'bar'-Element in 'navkorb'
+    let bars = this.querySelectorAll('.bar');
+    bars.forEach(bar => {
+        bar.classList.toggle('active');
+    });
+});
+
+    </script>
+
+<script>
+
+  //-----------------------------------verhindert den klick auf bar---------------------------------------------
+
+
+  document.querySelectorAll('.bar a').forEach(link => {
+    link.addEventListener('click', function(event) {
+        if (!link.parentElement.classList.contains('active')) {
+            event.preventDefault();
+        }
+    });
+});
+
+  </script>
+
+
+<script>
+
+  //-----------------------------------entfert contact text wenn hambubger nav offen ist---------------------------------------------
+  const navKorb = document.querySelector('.navkorb');
+const body = document.querySelector('body');
+
+navKorb.addEventListener('click', function() {
+  if(body.classList.contains('hamburger-active')) {
+      body.classList.remove('hamburger-active');
+  } else {
+      body.classList.add('hamburger-active');
+  }
+});
+</script>
+
+
+<script>
+  //preloader
+
+  let preloader = document.getElementById('preloader');
+  window.addEventListener('load', function(){
+    preloader.style.display = "none";
+  });
+</script>
+
+
+
+</body>
+</html>

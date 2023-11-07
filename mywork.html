@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Juan´s Work</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Willkommen auf meinem Webentwickler-Portfolio. Hier finden Sie meine Arbeit, Projekte und Fähigkeiten.">
+  <meta property="og:title" content="Webentwickler Portfolio - Juan Mejia">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+ <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="mywork.css">
+  
+
+
+  <meta name="theme-color" content="#1c4a60">
+  
+</head>
+<body>
+
+   <!---------------------------------preloader-------------------------------->
+   <div id="preloader"></div>
+
+
+   
+ <div id="bg-globo">
+
+    <section>
+        <div id="ripple">
+          <!--------------------------header--------------------------------->
+          <header>
+           <a href="index.html"><img src="img/logojuan.svg" alt=""></a>
+
+          <!--------------------------nav--------------------------------->
+          <!--hamburger icon-->
+
+
+
+            <div class="navkorb">
+            <div class="navbar">
+              <div class="boton"></div>
+              <div class="bar eins"><a class="bartext" href="aboutme.html">ABOUTME</a></div>
+              <div class="bar zwei"><a class="bartext" href="mywork.html">MYWORK</a></div>
+              <div class="bar drei"><a class="bartext" href="contact.html">CONTACT</a></div>
+              <div class="boton1"></div>
+            </div>
+          </div>
+
+        </header>
+
+
+
+        <!----------------------------main-------------------------------->
+        <main>
+          <div class="mywork"><img src="img/mywork.png" alt=""></div>
+          <a href="https://youtu.be/z6Lqh8poujI?si=TlG8vBWs3aTRJEpy" target="_blank"><div class="balloon" style="background-image: url('img/globo1.png');"></div></a>
+          <a href="https://youtu.be/RVOMpB4oFqk?si=_viNmdfy-ghzGmvo" target="_blank"><div class="balloon" style="background-image: url('img/globo2.png');"></div></a>
+          <a href="https://youtu.be/RVOMpB4oFqk?si=uJdJFep27hBQa7VG" target="_blank"><div class="balloon" style="background-image: url('img/globo3.png');"></div></a>
+          <a href="https://youtu.be/z4IHwYp_Ykc?si=xQjvXDSGGI2QJPOU" target="_blank"><div class="balloon" style="background-image: url('img/globo4.png');"></div></a>
+          <a href="https://youtu.be/Ld6QTGSo1qc?si=4p-IHtLMErrMcLfK" target="_blank"><div class="balloon" style="background-image: url('img/globo5.png');"></div></a>
+          <a href="https://youtu.be/z6Lqh8poujI?si=TlG8vBWs3aTRJEpy" target="_blank"><div class="balloon" style="background-image: url('img/globo6.png');"></div></a>
+          <a href="https://youtu.be/RVOMpB4oFqk?si=_viNmdfy-ghzGmvo" target="_blank"><div class="balloon" style="background-image: url('img/globo7.png');"></div></a>
+          <a href="https://youtu.be/RVOMpB4oFqk?si=uJdJFep27hBQa7VG" target="_blank"><div class="balloon" style="background-image: url('img/globo6.png');"></div></a>
+          <a href="https://youtu.be/z4IHwYp_Ykc?si=xQjvXDSGGI2QJPOU" target="_blank"><div class="balloon" style="background-image: url('img/globo7.png');"></div></a>
+          <a href="https://youtu.be/Ld6QTGSo1qc?si=4p-IHtLMErrMcLfK" target="_blank"><div class="balloon" style="background-image: url('img/globo8.png');"></div></a>
+          <a href="https://youtu.be/z6Lqh8poujI?si=TlG8vBWs3aTRJEpy" target="_blank"><div class="balloon" style="background-image: url('img/globo9.png');"></div></a>
+          <a href="https://youtu.be/RVOMpB4oFqk?si=_viNmdfy-ghzGmvo" target="_blank"><div class="balloon" style="background-image: url('img/globo10.png');"></div></a>
+          <a href="https://youtu.be/RVOMpB4oFqk?si=uJdJFep27hBQa7VG" target="_blank"><div class="balloon" style="background-image: url('img/globo11.png');"></div></a>
+          <a href="https://youtu.be/z4IHwYp_Ykc?si=xQjvXDSGGI2QJPOU" target="_blank"><div class="balloon" style="background-image: url('img/globo12.png');"></div></a>
+         
+        </main><br>
+
+ 
+        <!----------------------------footer-------------------------------->
+      <footer id="footer">
+        <div class="icon-container">
+
+          <p class="rechte">&copy; Copyright Juan Mejia</p>
+
+        </div>
+      </footer>
+        </div>
+    </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.ripples@0.6.3/dist/jquery.ripples-min.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+   //-----------------------------------RIPPLES---------------------------------------------
+
+        $('#ripple') .ripples({
+    resolution: 802,
+    dropRadius: 70,
+    perturbance:0.02,
+
+
+
+})
+    
+
+    //-----------------------------------BALLOONS---------------------------------------------
+    function animateBalloon(balloon) {
+    var startAngle = parseFloat(balloon.data('angle'));
+    var screenWidth = $(window).width();
+    var amplitudeX = screenWidth > 768 ? 1000 : screenWidth * 0.9; // Horizontal amplitude, responsiv
+    var amplitudeY = 70; // Vertical amplitude, kleiner für ein oval
+    var speed = 0.0004;
+
+    var centerX = screenWidth > 768 ? (screenWidth * 0.7) - balloon.width() / 2 : (screenWidth - balloon.width()) / 2;
+    var centerY = 50; // Erhöhen Sie den Y-Wert, um eine konkave Bewegung zu erzeugen
+    
+    var x = centerX + amplitudeX * Math.sin(startAngle); // Math.sin für horizontale Bewegung
+    var y = centerY + amplitudeY * Math.cos(startAngle); // Math.cos für vertikale Bewegung
+
+    balloon.css({ left: x, top: y });
+    
+    // Aktualisieren des Winkels für die nächste Animation
+    balloon.data('angle', startAngle + speed);
+    
+    requestAnimationFrame(function() { animateBalloon(balloon); });
+}
+
+var initialAngle = 0;
+
+$('.balloon').each(function(index) {
+    var currentBalloon = $(this);
+    setTimeout(function() {
+        currentBalloon.data('angle', initialAngle + index * 0.5);
+        animateBalloon(currentBalloon);
+    }, index * 150);
+});
+
+
+
+
+
+    </script>
+
+    <script>
+
+      //-----------------------------------OPACITY website---------------------------------------------
+$(document).ready(function() {
+    $('body, html').css('opacity', '1');
+});
+
+    </script>
+    <script>
+      //-- -----------------------------------hamburger menü----------------------------------------------->
+      document.querySelector('.navkorb').addEventListener('click', function() {
+    // Wechseln zwischen Hinzufügen/Entfernen der 'active'-Klasse
+    this.classList.toggle('active');
+
+    // Für jedes 'bar'-Element in 'navkorb'
+    let bars = this.querySelectorAll('.bar');
+    bars.forEach(bar => {
+        bar.classList.toggle('active');
+    });
+});
+
+    </script>
+
+<script>
+
+  //-----------------------------------verhindert den klick auf bar---------------------------------------------
+
+
+  document.querySelectorAll('.bar a').forEach(link => {
+    link.addEventListener('click', function(event) {
+        if (!link.parentElement.classList.contains('active')) {
+            event.preventDefault();
+        }
+    });
+});
+
+  </script>
+
+  <script>
+
+    //-----------------------------------entfert mywork text wenn hambbubger nav offen ist---------------------------------------------
+    const navKorb = document.querySelector('.navkorb');
+const body = document.querySelector('body');
+
+navKorb.addEventListener('click', function() {
+    if(body.classList.contains('hamburger-active')) {
+        body.classList.remove('hamburger-active');
+    } else {
+        body.classList.add('hamburger-active');
+    }
+});
+  </script>
+<script>
+  //preloader
+
+  let preloader = document.getElementById('preloader');
+  window.addEventListener('load', function(){
+    preloader.style.display = "none";
+  });
+</script>
+</body>
+</html>

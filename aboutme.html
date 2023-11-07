@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Juan</title>
+    <link rel="icon" href="favicon.ico">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Willkommen auf meinem Webentwickler-Portfolio. Hier finden Sie meine Arbeit, Projekte und Fähigkeiten.">
+    <meta property="og:title" content="Webentwickler Portfolio - Juan Mejia">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <link rel="manifest" href="site.webmanifest">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="aboutme.css">
+    <meta name="theme-color" content="#1c4a60">
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+
+ <!---------------------------------preloader-------------------------------->
+ <div id="preloader"></div>
+
+
+
+    <div id="bg-globo">
+
+    <section>
+        <div id="ripple">
+          <!--------------------------header--------------------------------->
+          <header>
+           <a href="index.html"><img src="img/logojuan.svg" alt=""></a>
+
+          <!--------------------------nav--------------------------------->
+          <!--hamburger icon-->
+
+
+
+            <div class="navkorb">
+            <div class="navbar">
+              <div class="boton"></div>
+              <div class="bar eins"><a class="bartext" href="aboutme.html">ABOUTME</a></div>
+              <div class="bar zwei"><a class="bartext" href="mywork.html">MYWORK</a></div>
+              <div class="bar drei"><a class="bartext" href="contact.html">CONTACT</a></div>
+              <div class="boton1"></div>
+            </div>
+          </div>
+
+        </header>
+
+
+
+        <!----------------------------main-------------------------------->
+        <main>
+          <div class="aboutme"><img src="img/aboutme.png" alt=""></div>
+
+          <div class="contenedor animiert">
+            <div class="columna">
+            <img src="img/juan.jpg" alt="" id="juan"> <p>Ich bin Juan Mejía, ursprünglich aus Kolumbien und lebe seit 9 Jahren in Deutschland. In Kolumbien war ich im Kreativbereich eines der größten und exklusivsten Restaurants in Cundinamarca aktiv. Dort hatte ich die Gelegenheit, mich als Künstler zu entwickeln. Ich arbeitete im Theater, schrieb Geschichten für Puppen und produzierte sogar eine 10-Song-CD für Kinder.
+
+              Später führten mich die Umstände nach Deutschland, wo sich meine Horizonte erweiterten. Ich absolvierte intensive Deutschkurse und vertiefte als Selbstlerner meine Fähigkeiten in der Musikproduktion. Mein Interesse an den visuellen Künsten wuchs, was mich zu Erfahrungen als Videoproduzent führte. Ich lernte die Verwendung von Audio- und Videobearbeitungstools wie Adobe Illustrator, Procreate, Photoshop, Adobe Premiere, After Effects, Logic Pro, Ableton und viele weitere.
+              
+              Ich unternahm individuelle Projekte und entwickelte meine erste Webseite mit WordPress. Hier erwachte mein Interesse an der Programmierung. Derzeit arbeite ich als Materialprüfer, was mir ermöglicht, meine Lebenshaltungskosten zu finanzieren und mein Studium als Webentwickler fortzusetzen.
+              
+              Aktuell verfüge ich über eine solide Grundlage in HTML und CSS und befinde mich im Prozess des Erlernens von JavaScript. Ich bin äußerst engagiert, diese Richtung zu folgen und meine Fähigkeiten zu verbessern. Ich freue mich auf die Teilnahme an neuen Projekten, Ideenformung, Problemlösung und das Eintauchen in die Welt der Technologie.
+            </p>
+          </div>
+
+        </div>
+      </main>
+        <!----------------------------footer-------------------------------->
+      <footer id="footer">
+        <div>
+
+        
+            <p class="rechte">&copy;Copyright Juan Mejia</p>
+      
+        
+
+        </div>
+      </footer>
+        </div>
+    </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.ripples@0.6.3/dist/jquery.ripples-min.min.js"></script>
+    <script src="script.js"></script>
+
+
+
+
+
+    <script>
+
+       //preloader
+
+  let preloader = document.getElementById('preloader');
+window.addEventListener('load', function() {
+    preloader.style.opacity = "0";
+    setTimeout(function() {
+        preloader.style.display = "none";
+    }, 500); 
+});
+
+
+    </script>
+    <script>
+
+      
+   //-----------------------------------RIPPLES---------------------------------------------
+
+
+   $('#ripple') .ripples({
+    resolution: 802,
+    dropRadius: 100,
+    perturbance:0.02,
+})
+</script>
+
+ <script>
+
+      //-----------------------------------OPACITY website---------------------------------------------
+$(document).ready(function() {
+    $('body, html').css('opacity', '1');
+});
+
+    </script>
+    <script>
+      //-- -----------------------------------hamburger menü----------------------------------------------->
+      document.querySelector('.navkorb').addEventListener('click', function() {
+    // Wechseln zwischen Hinzufügen/Entfernen der 'active'-Klasse
+    this.classList.toggle('active');
+
+    // Für jedes 'bar'-Element in 'navkorb'
+    let bars = this.querySelectorAll('.bar');
+    bars.forEach(bar => {
+        bar.classList.toggle('active');
+    });
+});
+
+    </script>
+
+<script>
+
+  //-----------------------------------verhindert den klick auf bar---------------------------------------------
+
+
+  document.querySelectorAll('.bar a').forEach(link => {
+    link.addEventListener('click', function(event) {
+        if (!link.parentElement.classList.contains('active')) {
+            event.preventDefault();
+        }
+    });
+});
+
+  </script>
+
+
+<script>
+
+  //-----------------------------------entfert aboutme text wenn hambubger nav offen ist---------------------------------------------
+  const navKorb = document.querySelector('.navkorb');
+const body = document.querySelector('body');
+
+navKorb.addEventListener('click', function() {
+  if(body.classList.contains('hamburger-active')) {
+      body.classList.remove('hamburger-active');
+  } else {
+      body.classList.add('hamburger-active');
+  }
+});
+</script>
+
+
+
+
+
+
+</body>
+</html>
