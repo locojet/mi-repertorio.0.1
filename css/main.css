@@ -149,7 +149,9 @@ header img{
   opacity: 1;
 }
 
-
+header img:hover{
+  transform: scale(1.1);
+}
 
 }
 
